@@ -9,7 +9,7 @@ import './index.css';
 
 const Header = ({ name, title, date }) => (
   <header>
-    <Link to="/1">
+    <Link to='/1'>
       <span>{name}</span> — {title}
     </Link>
     <time>{date}</time>
@@ -58,20 +58,17 @@ class TemplateWrapper extends Component {
 
     return (
       <div>
-        <Helmet
-          title={`${site.siteMetadata.title} — ${site.siteMetadata.name}`}
-        />
+        <Helmet title={`${site.siteMetadata.title} — ${site.siteMetadata.name}`} />
         <Header
           name={site.siteMetadata.name}
           title={site.siteMetadata.title}
           date={site.siteMetadata.date}
         />
-        <Swipeable
-          onSwipedLeft={this.swipeLeft}
-          onSwipedRight={this.swipeRight}
-        >
+        <Swipeable onSwipedLeft={this.swipeLeft} onSwipedRight={this.swipeRight}>
           <Transition location={location}>
-            <div id="slide" style={{'width': '100%'}}>{children}</div>
+            <div id='slide' style={{ width: '100%' }}>
+              {children}
+            </div>
           </Transition>
         </Swipeable>
       </div>
@@ -81,7 +78,7 @@ class TemplateWrapper extends Component {
 
 TemplateWrapper.propTypes = {
   children: PropTypes.node,
-  data: PropTypes.object,
+  data: PropTypes.object
 };
 
 export default props => (
@@ -105,11 +102,7 @@ export default props => (
       }
     `}
     render={data => (
-      <TemplateWrapper
-        site={data.site}
-        slidesLength={data.allSlide.edges.length}
-        {...props}
-      />
+      <TemplateWrapper site={data.site} slidesLength={data.allSlide.edges.length} {...props} />
     )}
   />
 );
