@@ -89,7 +89,11 @@ Redis is a simple data store that can be used as a database to store key/value p
 
 It will act as our queue and store a list of long running processes as they come in
 
-    Run locally using `redis-server`
+<br>
+
+Run locally using 
+
+    redis-server
 
 ---
 
@@ -105,7 +109,11 @@ Our worker is not limited to the same 30 second response timeout as our web serv
 
 It can take as long as it wants to complete its tasks
 
-    Run locally using `bundle exec sidekiq`
+<br>
+
+Run locally using 
+    
+    bundle exec sidekiq
 
 ---
 
@@ -136,3 +144,15 @@ It can take as long as it wants to complete its tasks
 <img src='./image17.png' >
 
 ---
+
+# One thing to note...
+
+<br>
+<br>
+
+Sidekiq comes with its own web UI
+
+After setting up the route for it, We can use this UI see all worker processes
+
+    localhost:3000/sidekiq
+
